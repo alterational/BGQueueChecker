@@ -8,7 +8,7 @@ class BGQPlayerScript : public PlayerScript
 public:
     BGQPlayerScript() : PlayerScript("BGQPlayerScript") { }
 
-    bool CanJoinInBattlegroundQueue(Player* player, ObjectGuid /*BattlemasterGuid*/, BattlegroundTypeId /*BGTypeID*/, uint8 joinAsGroup, GroupJoinBattlegroundResult& err) override
+    bool OnPlayerCanJoinInBattlegroundQueue(Player* player, ObjectGuid /*BattlemasterGuid*/, BattlegroundTypeId /*BGTypeID*/, uint8 joinAsGroup, GroupJoinBattlegroundResult& err) override
     {
         if (!sConfigMgr->GetOption<bool>("BGQueueChecker.Enable", false))
         {
